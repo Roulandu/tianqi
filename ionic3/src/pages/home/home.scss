@@ -1,0 +1,153 @@
+page-home {
+  @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+  @font-face {
+    font-family: 'weathericons';
+    src: url("//cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/fonts/weathericons-regular-webfont.eot");
+    src: url("//cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/fonts/weathericons-regular-webfont.eot?#iefix") format("embedded-opentype"), url("//cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/fonts/weathericons-regular-webfont.woff") format("woff"), url("//cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/fonts/weathericons-regular-webfont.ttf") format("truetype"), url("//cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/fonts/weathericons-regular-webfont.svg") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+  }
+  html,
+  body {
+    background-color: #5f7462;
+    width: 100%;
+    height: 100%;
+  }
+  main {
+    width: 100%;
+    height: 100%;
+    float: left;
+
+  }
+  .meta {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+  }
+  .meta p,
+  .meta a {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .meta h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: white;
+  }
+  .meta p {
+    line-height: 1.4;
+  }
+  .meta a:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  section {
+    height: calc(100%);
+    width: 100%;
+    overflow: hidden;
+    background-color: #644749;
+  }
+  header,
+  footer {
+    height: 40px;
+    background-color: #8ba892;
+  }
+  .weather {
+    height: 40%;
+    overflow: hidden;
+  }
+  .weather:hover,
+  section:not(:hover) .weather:first-child {
+    height: 60%;
+  }
+  .weather:hover .icon,
+  section:not(:hover) .weather:first-child .icon {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    z-index: 0;
+  }
+  .weather:hover + .weather .icon,
+  section:not(:hover) .weather:first-child + .weather .icon {
+    -webkit-transform: translateY(-408px);
+    -ms-transform: translateY(-408px);
+    transform: translateY(-408px);
+  }
+  .weather:hover ~ .weather .icon,
+  section:not(:hover) .weather:first-child ~ .weather .icon {
+    z-index: -1;
+  }
+  .weather:hover:not(:first-child) .data,
+  section:not(:hover) .weather:first-child:not(:first-child) .data {
+    -webkit-animation-name: slide-up;
+    animation-name: slide-up;
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+    -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .weather .content {
+    right: 0;
+    width: 40%;
+    position: absolute;
+    color: white;
+  }
+  .meta,
+  .weather .content {
+    font-family: 'Lato', sans-serif;
+  }
+
+  .weather h3 {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 0;
+    font-weight: 700;
+  }
+  .weather h2 {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    font-weight: 300;
+  }
+
+  .icon {
+    z-index: -1;
+    font-family: 'weathericons';
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 50%;
+    height: 90%;
+    -webkit-transform: translateY(136px);
+    -ms-transform: translateY(136px);
+    transform: translateY(136px);
+    align-items: center;
+  }
+  .icon i {
+    font-style: normal;
+  }
+
+
+  .weather,
+  .icon {
+    -webkit-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
+  }
+
+  .time-today {
+    background-color: #FF9966;
+  }
+  .time-tomorrow {
+    background-color: #FF6666;
+  }
+}

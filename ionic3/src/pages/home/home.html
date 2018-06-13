@@ -1,0 +1,47 @@
+<main>
+  <section *ngIf="weather != null">
+    <div class="weather time-today active">
+      <div class="icon">
+        <i>
+          <img [src]="weather.img_url">
+        </i>
+        <br>
+        <div class="data">
+          <h3>日出时间:{{weather.sunrise}}</h3>
+          <h3>日落时间:{{weather.sunset}}</h3>
+        </div>
+      </div>
+      <div class="content">
+        <h3>{{weather.city}}</h3>
+        <h3>{{weather.temperature}}</h3>
+        <div class="data">
+          <h3>{{weather.weather}}</h3>
+          <h2>{{weather.humidity}}</h2>
+          <h2>{{weather.time}}更新</h2>
+        </div>
+      </div>
+    </div>
+    <div class="weather time-tomorrow">
+      <div class="icon">
+        <i>
+          <img [src]="weather.wind_url">
+        </i>
+        <div class="data">
+          <h3>{{weather.wind}}</h3>
+        </div>
+      </div>
+      <div class="content">
+        <h3>生活指数</h3>
+        <br>
+        <h2>{{weather.airCondition}}</h2>
+        <h2>{{weather.pollutionIndex}}</h2>
+        <div class="data">
+          <h2>感冒指数:{{weather.coldIndex}}</h2>
+          <h2>穿衣推荐:{{weather.dressingIndex}}</h2>
+          <h2>洗车指数:{{weather.washIndex}}</h2>
+          <h2>运动指数:{{weather.exerciseIndex}}</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
